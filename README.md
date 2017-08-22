@@ -4,7 +4,7 @@
 ## どんなクラス・構造体があるの？
 - PossibleChangeStatus(PossibleChangeStatus.hpp)
 
-ＨＰやＭＰ等の演算管理を行うクラス
+ＨＰやＭＰ等のパラメーターの演算管理を行うクラス
 
 - LevelManager(LevelManager.hpp)
 
