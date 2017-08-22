@@ -1,4 +1,4 @@
-#ifndef __ELEMENT_HPP__
+﻿#ifndef __ELEMENT_HPP__
 #define __ELEMENT_HPP__
 #include <string>
 #include <vector>
@@ -11,12 +11,6 @@ class AdvantageInfo {
 private:
 	std::vector<ElementInfo> WeakElement;
 	std::vector<ElementInfo> BeautyElement;
-	bool IsWeakElement(const ElementInfo AttackElement) const {
-		return std::any_of(this->WeakElement.begin(), this->WeakElement.end(), [AttackElement](const ElementInfo Elem) { return AttackElement == Elem; });
-	}
-	bool IsBeautyElement(const ElementInfo AttackElement) const {
-		return std::any_of(this->BeautyElement.begin(), this->BeautyElement.end(), [AttackElement](const ElementInfo Elem) { return AttackElement == Elem; });
-	}
 	AdvantageInfo(const std::vector<ElementInfo> Weak, const std::vector<ElementInfo> Beauty) : WeakElement(Weak), BeautyElement(Beauty) {}
 public:
 	AdvantageInfo(const ElementInfo Element) {
@@ -53,6 +47,14 @@ public:
 	float GetAdvantage(const ElementInfo AttackElement, const float DmgMgnfctByBtAttack, const float DmgMgnfctByWkAttack) const {
 		return this->IsWeakElement(AttackElement) ? 2.0f : (this->IsBeautyElement(AttackElement) ? 0.5f : 1.0f);
 
+	}
+	// 引数：攻撃属性
+	bool IsWeakElement(const ElementInfo AttackElement) const {
+		return std::any_of(this->WeakElement.begin(), this->WeakElement.end(), [AttackElement](const ElementInfo Elem) { return AttackElement == Elem; });
+	}
+	// 引数：攻撃属性
+	bool IsBeautyElement(const ElementInfo AttackElement) const {
+		return std::any_of(this->BeautyElement.begin(), this->BeautyElement.end(), [AttackElement](const ElementInfo Elem) { return AttackElement == Elem; });
 	}
 };
 

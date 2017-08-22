@@ -1,5 +1,5 @@
 # CharacterInformationLibrary
-対戦ゲームやRPG等でパラメーターや魔法、特技等、キャラクターに関する情報を管理を行うライブラリです。
+対戦ゲームやRPG等でパラメーターや魔法、特技等、キャラクターに関する情報の管理を行うライブラリです。
 
 ## どんなクラス・構造体があるの？
 - PossibleChangeStatus(PossibleChangeStatus.hpp)
@@ -17,6 +17,10 @@
 - ElementInfo(Element.hpp)
 
 属性(enum class)
+
+- AdvantageInfo(Element.hpp)
+
+属性相性の判定を行うクラス。ダメージ倍率の演算も行えるが、属性の管理は行えない
 
 - Skill(Skill.hpp)
 
