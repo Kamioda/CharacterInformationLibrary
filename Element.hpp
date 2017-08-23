@@ -46,7 +46,6 @@ public:
 	// 戻り値　：ダメージ倍率
 	float GetAdvantage(const ElementInfo AttackElement, const float DmgMgnfctByBtAttack, const float DmgMgnfctByWkAttack) const {
 		return this->IsWeakElement(AttackElement) ? 2.0f : (this->IsBeautyElement(AttackElement) ? 0.5f : 1.0f);
-
 	}
 	// 引数：攻撃属性
 	bool IsWeakElement(const ElementInfo AttackElement) const {

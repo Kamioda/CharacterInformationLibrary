@@ -102,7 +102,7 @@ public:
 	bool IsMin() const { return this->CurrentStatus == this->MinStatus; }
 	bool IsMax() const { return this->CurrentStatus == this->MaxStatus; }
 	float GetProportion() const { 
-		const float Prportion = ChangeTwoDigits(
+		const float Proportion = ChangeTwoDigits(
 			static_cast<double>(this->CurrentStatus) * 100 / static_cast<double>(this->MaxStatus - this->MinStatus)
 		);
 		return (Proportion == 0.00f && !this->IsMin())
