@@ -65,12 +65,16 @@ private:
 		for (size_t i = 0; i < ElementList.size(); i++) if (Element == ElementList[i]) return static_cast<ElementInfo>(i);
 		return ElementInfo::Normal;
 	}
+	ElementInfo ElementCast(const std::wstring Element) noexcept {
+		static const std::vector<std::wstring> ElementList = { L"normal", L"ice", L"thunder", L"earth", L"wind", L"shine", L"dark" };
+		for (size_t i = 0; i < ElementList.size(); i++) if (Element == ElementList[i]) return static_cast<ElementInfo>(i);
+		return ElementInfo::Normal;
+	}
 public:
 	Element() : Element(ElementInfo::Normal) {}
-	// 直接enum classの値を代入する
 	Element(const ElementInfo Elem) : Elem(Elem) {}
-	// ファイルから読み込んだ場合
-	Element(const std::string Elem) : Element(ElementCast(Elem)) {}
+	Element(const std::string Elem) : Element(this->ElementCast(Elem)) {}
+	Element(const std::wstring Elem) : Element(this->ElementCast(Elem)) {}
 	ElementInfo Elem;
 	float Advantage(const ElementInfo AttackElement, connst float DmgMgnfctByBtAttack, const float DmgMgnfctByWkAttack) const {
 		return (this->Elem == ElementInfo::Normal || AttackElement == ElementInfo::Normal)
