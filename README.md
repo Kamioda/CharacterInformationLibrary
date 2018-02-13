@@ -2,6 +2,10 @@
 対戦ゲームやRPG等でパラメーターや魔法、特技等、キャラクターに関する情報の管理を行うライブラリです。
 
 ## どんなクラス・構造体があるの？
+- number(Number.hpp)
+
+全ての演算管理クラスの大元となるクラス。namespace standardの中にあります
+
 - PossibleChangeStatus(PossibleChangeStatus.hpp)
 
 ＨＰやＭＰ等のパラメーターの演算管理を行うクラス
@@ -9,6 +13,10 @@
 - UseDamageCalculationParameter(UseDamageCalculationParameter.hpp)
 
 攻撃力、守備力といったダメージに関係するパラメーターの演算管理を行うクラス
+
+- SpeedManager(SpeedManager.hpp)
+
+素早さパラメーターの演算管理を行うクラス
 
 - LevelManager(LevelManager.hpp)
 
