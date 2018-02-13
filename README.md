@@ -6,6 +6,10 @@
 
 ＨＰやＭＰ等のパラメーターの演算管理を行うクラス
 
+- UseDamageCalculationParameter(UseDamageCalculationParameter.hpp)
+
+攻撃力、守備力といったダメージに関係するパラメーターの演算管理を行うクラス
+
 - LevelManager(LevelManager.hpp)
 
 経験値及びレベルの演算管理を行うクラス
@@ -25,3 +29,6 @@
 - Skill(Skill.hpp)
 
 魔法、特技の情報を管理する構造体
+
+## ライセンス
+本ライブラリは、MITライセンスとなっています。
