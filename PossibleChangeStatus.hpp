@@ -16,5 +16,7 @@ public:
 	bool IsMax() const noexcept { return this->GetMax() == this->Get(); }
 	// 現在値を取得する
 	T operator * () const noexcept { return this->Get(); }
+	// 割合を取得する
+	float GetRatio() const noexcept { return static_cast<float>(static_cast<double>(this->Get()) / static_cast<double>((this->GetMax() - this->GetMin()))); }
 };
 #endif
